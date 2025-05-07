@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-COMMERCE WEBSITE</title>
+    
+    <!-- favicon -->
+    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    
+    <!-- Styles & Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    
+    <!-- JS -->
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <script src="js/jQuery3.4.1.js"></script>
+</head>
+
+<body>
+    <!-- Sections -->
+    <div id="header"></div>
+    <div id="slider"></div>
+    <div id="content"></div>
+    <div id="footer"></div>
+
+    <script>
+        function load(url, elementId) {
+            var req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(elementId).innerHTML = req.responseText;
+        }
+
+        load("header.html", "header");
+        load("slider.html", "slider");
+        load("content.html", "content");
+        load("footer.html", "footer");
+    </script>
+
+    <!-- Slider Initialization -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#containerSlider').slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500
+            });
+        });
+    </script>
+    
+    <script src="content.js"></script>
+</body>
+</html>
